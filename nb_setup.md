@@ -20,7 +20,7 @@
    -  set to private
 
 # create a github personal access token (PAT)
-*  log into github.com as <user>
+*  log into github.com
 *  click on user icon in upper right and select "Settings"
 *  on the left, select "Developer Settings"
 *  on the left, select "Personal access tokens"
@@ -28,7 +28,7 @@
    -  add a note specifying its purpose (eg "nutanix notes")
    -  select "repo" in scope
    -  hit "Generate token" button
-   -  save the token string in a safe place
+   -  save the PAT string in a safe place
 * reference:
 * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
 
@@ -54,7 +54,6 @@ user.name=Jason Lindemuth
 user.email=jason.lindemuth@nutanix.com
 credential.helper=osxkeychain
 ```
-
 
 # start a new local notebook
 ```
@@ -85,4 +84,6 @@ paste PAT string and hit enter twice
 $ nb add -t "nb setup"
 ```
 
+# confirm the new file "nb_setup.md" is in github.com repo
 
+# now, all nb adds and edits will automatically sync local notebook changes to remote repo
