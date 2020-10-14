@@ -1,5 +1,5 @@
 # nb setup
-# set up an nb notebook on a mac to sync with a remote private github repo
+## set up nb notebook on a mac to sync with a remote private github repo
 
 # create a github account
 *  user = jklntnx
