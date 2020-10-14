@@ -7,7 +7,7 @@
 *  pass = <pass>
 *  follow instructions to verify account
 
-# tell guthub to use 'master' as default
+# tell github to use 'master' as default
 *  log into github.com as <user>
 *  click on user icon in upper right and select "Settings"
 *  on the left, select "Repositories"
