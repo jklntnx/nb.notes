@@ -47,6 +47,11 @@ set up email address
 $ git config --global user.email jason.lindemuth@nutanix.com
 ```
 
+set up git to use context specific urls for credentials
+```
+$ git config --global credential.github.com.useHttpPath true
+```
+
 confirm git global settings
 ```
 $ git config --global -l
