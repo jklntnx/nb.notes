@@ -16,7 +16,7 @@
 # set up github private project
 *  log into github as <user>
 *  create a new repository
-   -  name = notes
+   -  name = nb.notes
    -  set to private
 
 # create a github personal access token (PAT)
@@ -67,7 +67,7 @@ $ nb use notes
 
 # set the notebook remote repo
 ```
-$ nb remote set https://github.com/jklntnx/notes.git
+$ nb remote set https://github.com/jklntnx/nb.notes.git
 ```
 
 # force git authentication (something appears broken, thus this step)
