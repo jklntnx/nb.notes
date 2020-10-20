@@ -198,10 +198,10 @@ category (```pass ls work```).  pass can also search for passwords.  see the
 ## TODO: let's set this up on another machine for cross-platform access
 ## TODO: set up github.com for 2-factor authentication with Authy
 ## TODO: advanced setup...set up a second pass db on a linux system
-https://medium.com/@antisyllogism/linux-windows-password-manager-pass-e3ad2681ecf3
+- https://medium.com/@antisyllogism/linux-windows-password-manager-pass-e3ad2681ecf3
 _anyone want to figure this out?_
 
 # references: 
-https://brew.sh/
-https://www.passwordstore.org/
-https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1
+- https://brew.sh/
+- https://www.passwordstore.org/
+- https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1
