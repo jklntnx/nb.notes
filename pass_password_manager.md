@@ -191,6 +191,9 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/jasonlindemuth/pass.dev.git
    1b4dfee..19558f0  master -> master
 ```
+pass has subcommands to list (```pass ls```) everything, or to list within a
+category (```pass ls work```).  pass can also search for passwords.  see the
+```pass help``` for all the options.
 
 ## TODO: let's set this up on another machine for cross-platform access
 ## TODO: set up github.com for 2-factor authentication with Authy
