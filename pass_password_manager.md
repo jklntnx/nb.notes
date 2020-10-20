@@ -39,7 +39,7 @@ I recommend the following input:
 - enter a passphrase for the key (this should be a very strong passphrase and
   one you cannot forget)
 
-# note the key ID
+## note the key ID
 ```
 $ gpg --list-keys
 /Users/jason.lindemuth/.gnupg/pubring.kbx
@@ -49,34 +49,32 @@ pub   rsa4096 2019-09-06 [SC]
 uid           [ultimate] Jason Lindemuth (pass master key) <jason@bloom.us>
 sub   rsa4096 2019-09-06 [E]
 ```
-### the key ID is the long string DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
+the key ID is the long string DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
 
-# now create an new password store using that key
+## now create an new password store using that key
 ```
 $ pass init DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
 ```
 
-# next, if git has not been set up on your system yet, provide git the global
-# config info
+# next, configure git global parameters if necessary
 ```
 $ git config --global user.name "Jason Lindemuth"
 $ git config --global user.email "jason@bloom.us"
 ```
-### this info shows up in git commits, fyi
+this info shows up in git commits, fyi
 
-# next make the password store db a git repo
+## next make the password store db a git repo
 ```
 $ pass git init
 ```
 
-# create a new password to test the setup
+## create a new password to test the setup
 ```
 $ pass add test
-# enter a test password twice
 ```
+enter a password twice
 
-# to set up a remote repo for pass (for plain old backup, for one, and for easy
-# cross-platform portability...see steps below), set up github.com remote repo
+## now set up a github.com repo for upstream storage
 go to github.com
 - create a new account (if needed)
 - create a new repo
@@ -86,28 +84,28 @@ go to github.com
   + don't add any extra README or license files
   + click "Create Repository"
 
-# create a personal access token (PAT) on github for the account
+## create a personal access token (PAT) on github for the account
 go to github.com as the user above
-click on the user ion top right and select "Settings"
-in the left menu, click "Developer Settings"
-click on "Generate new token" button
-add a note detailing the purpose (eg "USER github personal access token")
-select the top level "repo" for the scope
-hit "generate token" button
-save the token string in a safe place
+ - click on the user ion top right and select "Settings"
+ - in the left menu, click "Developer Settings"
+ - click on "Generate new token" button
+ - add a note detailing the purpose (eg "USER github personal access token")
+ - select the top level "repo" for the scope
+ - hit "generate token" button
+ - save the token string in a safe place
 
-# tell git to use the osx keychain to cache the tokens
+## tell git to use the osx keychain to cache the tokens
 ```
 $ git config --global credential.helper osxkeychain
 ```
 
-# tell git to use url path as context for authentication (this allows multiple
-# github accounts, eg a work and a personal, to work in harmony)
+## tell git to use the url path as context for authentication
 ```
 $ git config --global credential.https://github.com.useHttpPath true
 ```
+this allows multiple github accounts, eg a work and a personal, to work in harmony
 
-# tell pass to set an upstream repo
+## tell pass to set an upstream repo
 ```
 $ pass git remote add origin https://github.com/jasonlindemuth/pass.dev.git
 ```
