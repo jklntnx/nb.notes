@@ -1,43 +1,43 @@
-# pass password manager
+# pass: portable cli password manager
 
-## description: how to set up a command-line password manager on a mac backed by
-## a local git repo and synchronized to a github.com private repo online.  
+### *description*: how to set up a command-line password manager on a mac backed by
+### a local git repo and synchronized to a github.com private repo online.  
 
-
-# install apple xcode cli tools (CLT)
+## *prerequisite*: install apple xcode cli tools (CLT)
 ```
 $ xcode-select --install
 ```
-### this launches a dialog window...on catalina it fails with an error
-### in this case, install the xcode tools manually from:
+this launches a dialog window...on catalina it fails with an error in this case,
+install the xcode tools manually from:
 ```
 https://developer.apple.com/downloads/more
 ```
-## download "Command Line Tools for Xcode 12" and install
+download "Command Line Tools for Xcode 12" and install
 
-# next, install homebrew for mac os package management
+## next, install homebrew for mac os package management
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-# next, install pass itself
+## next, install pass itself
 ```
 $ brew install pass
 ```
-### this will install pass and all dependencies (including gpg)
+this will install pass and all dependencies (including gpg)
 
-# next, create a gpg key for pass
+## next, create a gpg key for pass
 ```
 $ gpg --full-generate-key
 ```
-### I recommend the following input:
+I recommend the following input:
 - use 1) RAS and RSA key type (default)
 - choose 4096 for keysize
 - no expiration
 - enter your name
 - enter your email address
 - enter a description in comment, eg "pass master key"
-- enter a passphrase for the key (this should be a very strong passphrase)
+- enter a passphrase for the key (this should be a very strong passphrase and
+  one you cannot forget)
 
 # note the key ID
 ```
