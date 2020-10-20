@@ -163,7 +163,27 @@ it's important to run:
 ```
 $ pass git push
 ```
-this will push local changes to the github.com upstream repo.
+this will push local changes to the github.com upstream repo.  standard git
+commands work as expected, eg, to check git repo status:
+```
+$ pass git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+$ pass git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.04 KiB | 1.04 MiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/jasonlindemuth/pass.dev.git
+   1b4dfee..19558f0  master -> master
+
+```
 
 ## next, let's set this up on another machine for cross-platform access
 
@@ -173,8 +193,6 @@ https://medium.com/@antisyllogism/linux-windows-password-manager-pass-e3ad2681ec
 ## _anyone want to figure this out?_
 
 # references: 
-```
 https://brew.sh/
 https://www.passwordstore.org/
 https://medium.com/@chasinglogic/the-definitive-guide-to-password-store-c337a8f023a1
-```
