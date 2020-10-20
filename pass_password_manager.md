@@ -38,7 +38,7 @@ I recommend the following input:
 - enter your email address
 - enter a description in comment, eg "pass master key"
 - enter a passphrase for the key (this should be a very strong passphrase and
-  one you cannot forget)
+  one you **cannot forget** or else you will lose access to your passwords)
 
 ## note the key ID
 ```
@@ -57,7 +57,7 @@ the key ID is the long string CB59A40E5ECD1EB873FB399BD6E3FAC6F018459B
 $ pass init CB59A40E5ECD1EB873FB399BD6E3FAC6F018459B
 ```
 
-## configure git global parameters if necessary
+## configure git global parameters (if necessary)
 ```
 $ git config --global user.name "Jason Lindemuth"
 $ git config --global user.email "jason.lindemuth@nutanix.com"
@@ -75,10 +75,15 @@ $ pass add test
 ```
 enter a password twice
 
+## validate
+```
+$ pass show test
+```
+
 ## now set up a github.com repo for upstream storage
 go to github.com
 - create a new account (if needed)
-- create a new repo
+- create a new private repo
   + give it a name (eg pass or password-store)
   + give it a description (eg pass db)
   + make it private (passwords are safely encrypted but no need to expose it)
@@ -93,7 +98,7 @@ go to github.com as the user above
  - add a note detailing the purpose (eg "USER github personal access token")
  - select the top level "repo" for the scope
  - hit "generate token" button
- - save the token string in a safe place
+ - save the token string in a safe temporary place (we will use it shortly)
 
 ## tell git to use the osx keychain to cache the tokens
 ```
@@ -117,6 +122,9 @@ $ pass git push -u --all
 ```
 paste the PAT string obtained above into the user name, and hit enter twice.
 this should push the pass git repo into github.
+
+## confirm the token in KeyChain Access
+open "Keychain Access" and type github.com in the search box.  
 
 ## confirm the new test password file is in the github repo
 look at github.com repo you created for the new password file as well as a
@@ -182,15 +190,13 @@ Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/jasonlindemuth/pass.dev.git
    1b4dfee..19558f0  master -> master
-
 ```
 
-## next, let's set this up on another machine for cross-platform access
-
-
-# TODO: advanced setup...set up a second pass db on a linux system
+## TODO: let's set this up on another machine for cross-platform access
+## TODO: set up github.com for 2-factor authentication with Authy
+## TODO: advanced setup...set up a second pass db on a linux system
 https://medium.com/@antisyllogism/linux-windows-password-manager-pass-e3ad2681ecf3
-## _anyone want to figure this out?_
+_anyone want to figure this out?_
 
 # references: 
 https://brew.sh/
