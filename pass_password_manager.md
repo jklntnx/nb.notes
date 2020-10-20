@@ -1,7 +1,7 @@
 # pass: portable cli password manager
 
-### **description**: how to set up a command-line password manager on a mac backed by
-### a local git repo and synchronized to a github.com private repo online.  
+**description**: how to set up a command-line password manager on a mac backed by
+a local git repo and synchronized to a github.com private repo online.  
 
 
 ## *prerequisite*: install apple xcode cli tools (CLT)
