@@ -1,7 +1,8 @@
 # pass: portable cli password manager
 
-### *description*: how to set up a command-line password manager on a mac backed by
+### **description**: how to set up a command-line password manager on a mac backed by
 ### a local git repo and synchronized to a github.com private repo online.  
+
 
 ## *prerequisite*: install apple xcode cli tools (CLT)
 ```
@@ -14,18 +15,18 @@ https://developer.apple.com/downloads/more
 ```
 download "Command Line Tools for Xcode 12" and install
 
-## next, install homebrew for mac os package management
+## install homebrew for mac os package management
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-## next, install pass itself
+## install pass itself
 ```
 $ brew install pass
 ```
 this will install pass and all dependencies (including gpg)
 
-## next, create a gpg key for pass
+## create a gpg key for pass
 ```
 $ gpg --full-generate-key
 ```
@@ -45,25 +46,25 @@ $ gpg --list-keys
 /Users/jason.lindemuth/.gnupg/pubring.kbx
 -----------------------------------------
 pub   rsa4096 2019-09-06 [SC]
-      DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
-uid           [ultimate] Jason Lindemuth (pass master key) <jason@bloom.us>
+      CB59A40E5ECD1EB873FB399BD6E3FAC6F018459B
+uid           [ultimate] Jason Lindemuth (pass master key) <jason.lindemuth@nutanix.com>
 sub   rsa4096 2019-09-06 [E]
 ```
-the key ID is the long string DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
+the key ID is the long string CB59A40E5ECD1EB873FB399BD6E3FAC6F018459B
 
-## now create an new password store using that key
+## create an new password store using that key
 ```
-$ pass init DB39F40E3ECC2EB073FB399BD6E3FAC6F018449D
+$ pass init CB59A40E5ECD1EB873FB399BD6E3FAC6F018459B
 ```
 
-# next, configure git global parameters if necessary
+## configure git global parameters if necessary
 ```
 $ git config --global user.name "Jason Lindemuth"
-$ git config --global user.email "jason@bloom.us"
+$ git config --global user.email "jason.lindemuth@nutanix.com"
 ```
 this info shows up in git commits, fyi
 
-## next make the password store db a git repo
+## make the password store db a git repo
 ```
 $ pass git init
 ```
@@ -86,7 +87,7 @@ go to github.com
 
 ## create a personal access token (PAT) on github for the account
 go to github.com as the user above
- - click on the user ion top right and select "Settings"
+ - click on the user icon top right and select "Settings"
  - in the left menu, click "Developer Settings"
  - click on "Generate new token" button
  - add a note detailing the purpose (eg "USER github personal access token")
@@ -110,24 +111,24 @@ this allows multiple github accounts, eg a work and a personal, to work in harmo
 $ pass git remote add origin https://github.com/jasonlindemuth/pass.dev.git
 ```
 
-# tell pass to push the local repo to the remote
+## tell pass to push the local repo to the remote
 ```
 $ pass git push -u --all
-paste the PAT string obtained above into the user name, and hit enter twice
-this should push the pass git repo into github
 ```
+paste the PAT string obtained above into the user name, and hit enter twice.
+this should push the pass git repo into github.
 
-# confirm the new test.gpg password (along with the .gitattributes and .gpg.id)
-# files are in the github repo
-look at github.com
+## confirm the new test password file is in the github repo
+look at github.com repo you created for the new password file as well as a
+.gitattributes and .gpg.id file
 
-# confirm we can make new passwords and push the changes to github
+## confirm we can make new passwords and push the changes to github
 ```
 $ pass add test2
 enter passwords
 $ pass git push
 ```
-### confirm the new test2.gpg file is in the github repo
+on github.com, confirm the new test2.gpg file is in the github repo
 
 # basics of pass
 pass uses the file system for the db namespace, so you can organize your
@@ -157,21 +158,19 @@ lines to a password file using your preferred $EDITOR:
 ```
 $ pass edit work/github.nutanix
 ```
-## NB: pass does not automatically push and/or pull from the remote repo, so
-## it's important to run:
+**NB**: pass does not automatically push and/or pull from the remote repo, so
+it's important to run:
 ```
 $ pass git push
 ```
-##  this will push local changes to the github.com upstream repo.
+this will push local changes to the github.com upstream repo.
 
-
-
-# next, let's set this up on another machine for cross-platform access
+## next, let's set this up on another machine for cross-platform access
 
 
 # TODO: advanced setup...set up a second pass db on a linux system
 https://medium.com/@antisyllogism/linux-windows-password-manager-pass-e3ad2681ecf3
-## _anyone want to figure this out?
+## _anyone want to figure this out?_
 
 # references: 
 ```
