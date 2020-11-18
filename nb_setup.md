@@ -92,3 +92,42 @@ $ nb add -t "nb setup"
 # confirm the new file "nb_setup.md" is in github.com repo
 
 # now, all nb adds and edits will automatically sync local notebook changes to remote repo
+
+automate new project setup
+-------------------------
+high end flow:
+new project (eg new client)
+create notebook
+add README with "notes about" description
+crete github repo
+sync and tell nb of github remote
+
+
+install github cli (still wonder if curl isn't a better option...want just to
+create a bare repo)
+$ brew install gh
+
+updated the scope for the PAT
+added admin:org (which includes write:org and read:org)
+
+add the token into a pass entry
+$ pass add work/github.jklntnx.pat
+enter <PAT STRING>
+
+authenticate with github (run pass manually first to unlock pass db)
+$ pass work/github.jklntnx.pat | gh auth login --with-token
+
+
+add a new notebook
+$ nb notebooks add zynga
+
+create a github repo
+$ cd ~/.nb/zynga
+$ export GUTHUB_TOKEN=<PAT STRING>
+$ gh repo create --private -y jklntnx/nb.zynga
+
+
+
+
+
+
